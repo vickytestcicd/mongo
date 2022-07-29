@@ -16,5 +16,3 @@ jobs:
           echo ${{ secrets.ACCOUNT2 }}
           echo ${{ ACCOUNT }}
           echo ${{ ACCOUNT2 }}
-          echo $ACCOUNT
-          echo $ACCOUNT2
