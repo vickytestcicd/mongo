@@ -14,5 +14,3 @@ jobs:
       - run: |
           echo ${{ secrets.ACCOUNT }}
           echo ${{ secrets.ACCOUNT2 }}
-          echo ${{ ACCOUNT }}
-          echo ${{ ACCOUNT2 }}
