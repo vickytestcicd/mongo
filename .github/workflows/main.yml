@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
       - run: |
          export commitid=$(git log -1 --format='%H')
-         echo $commitid
-         git branch --contains 63f448c891d912afeabf21d674e1f4988a0ff31
+
+         git branch 
 
 
