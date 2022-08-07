@@ -21,6 +21,6 @@ jobs:
           ref: ${{ inputs.tag }}
           fetch-depth: 0
       - run: |
-         git log -l --format='%H'
+         git log -l --format='%H' 
 
 
