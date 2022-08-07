@@ -11,7 +11,7 @@ jobs:
         with:
           repository: vickytestcicd/testcicd
           ref: y0.0.1
-          fetch-depth: 2
+          fetch-depth: 0
       - run: |
           git branch --contains tags/y0.0.1
       - run: |
