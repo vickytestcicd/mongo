@@ -23,6 +23,6 @@ jobs:
       - run: |
          export commitid=$(git log -1 --format='%H')
          git branch -r
-         git branch -a --contains 63f448c891d912afeabf21d674e1f4988a0ff31d
+         git branch -a --contains tags/y0.0.1
 
 
