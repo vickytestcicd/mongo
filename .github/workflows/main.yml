@@ -22,7 +22,6 @@ jobs:
           fetch-depth: 0
       - run: |
          export commitid=$(git log -1 --format='%H')
-         git branch -r
          git branch -a --contains tags/y0.0.1
 
 
