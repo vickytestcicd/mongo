@@ -21,7 +21,7 @@ jobs:
           ref: ${{ inputs.tag }}
           fetch-depth: 0
       - run: |
-         export commitid=git log -1 --format='%H'
+         export commitid=$(git log -1 --format='%H')
          git branch --contains commitid
 
 
