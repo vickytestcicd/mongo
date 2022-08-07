@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
       - run: |
          export commitid=$(git log -1 --format='%H')
-         git remote -v
-         git branch 
+         git branch -r
+         git branch -a --contains 63f448c891d912afeabf21d674e1f4988a0ff31d
 
 
