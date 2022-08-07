@@ -1,16 +1,16 @@
 name: CI
 
 on:
- workflow_call:
-  secrets:
-    ACCOUNT:
-      required: true
-    ACCOUNT2:
-      required: true
+ push:
+   branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: vickytestcicd/testcicd
+          ref: main
       - run: |
-          echo ${{ secrets.ACCOUNT }}
-          echo ${{ secrets.ACCOUNT2 }}
+          git branch --contains tags/y0.0.1
+
