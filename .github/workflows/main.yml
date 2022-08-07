@@ -1,20 +1,26 @@
 name: CI
 
 on:
- push:
-   branches: [main]
+  workflow_call:
+    inputs:
+      repository:
+        description: 'github repository'
+        required: true
+        type: string
+      tag: 
+        description: 'github push tag '
+        required: true
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: vickytestcicd/testcicd
-          ref: y0.0.1
+          repository: ${{ inputs.repository }}
+          ref: ${{ inputs.tag }}
           fetch-depth: 0
       - run: |
-          git branch --contains tags/y0.0.1
-      - run: |
-          git show y0.0.1
+         git log -l --format='%H'
 
 
