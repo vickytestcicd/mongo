@@ -13,4 +13,7 @@ jobs:
           ref: y0.0.1
       - run: |
           git branch --contains tags/y0.0.1
+      - run: |
+          git show y0.0.1
+
 
