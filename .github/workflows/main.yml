@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: vickytestcicd/testcicd
-          ref: main
+          ref: y0.0.1
       - run: |
           git branch --contains tags/y0.0.1
 
