@@ -19,7 +19,7 @@ jobs:
       - run: |
           export a=0
           echo $a
-          if [[ $a -eq 0 ]]; then echo $a 
+          if [[ $a -eq 0 ]]; then echo -e "\033[31m${a}\033[0m" 
           exit 0; fi
       - run: echo "test"
           
