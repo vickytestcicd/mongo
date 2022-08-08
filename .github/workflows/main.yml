@@ -21,8 +21,7 @@ jobs:
           ref: ${{ inputs.tag }}
           fetch-depth: 0
       - run: |
-         export commitid=$(git log -1 --format='%H')
-         echo ${{ github.repository }}
-         echo ${{ github.event.repository.name }}
+         export commitid=$(echo $($(git log -1 --format='%H'):0:7))
+         echo $commitid
 
 
