@@ -38,4 +38,7 @@ jobs:
       - name: test5
         id: test5
         run: echo test5
+      - name: check
+        if: ${{ cancelled() && steps.test1.conclusion == 'success' }}
+        run: echo ye1
           
