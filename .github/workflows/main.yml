@@ -4,22 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       repository:
-        description: 'github repository'
+#         description: 'github repository'
         required: true
-        type: string
+#         type: string
       tag: 
-        description: 'github push tag '
+#         description: 'github push tag '
         required: true
-        type: string
+#         type: string
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          repository: ${{ inputs.repository }}
-          ref: ${{ inputs.tag }}
-          fetch-depth: 0
       - run: |
           echo  ${{ inputs.repository }}
           echo ${{ inputs.tag }}
