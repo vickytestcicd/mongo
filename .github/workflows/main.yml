@@ -14,14 +14,27 @@ jobs:
   ci: 
     runs-on: ubuntu-latest
     steps: 
-#       - uses: actions/checkout@v2
-#         with:
-#           repository: ${{ inputs.repository }}
-#           ref: ${{ inputs.tag }}
-      - run: |
-          export a=0
-          export c=$(echo $a|grep1)
-          
-          if [[ $a -eq null ]]; then echo "test1";else echo "test2";fi
-      - run: echo "test"
+      - name: test1
+        id: test1
+        run: |
+           echo test1
+           exit 0
+      - name: test2
+        id: test2
+        run: |
+           echo test2
+           exit 0
+      - name: test3
+        id: test3
+        run: |
+           echo test3
+           exit 1
+      - name: test4
+        id: test4
+        run: echo test4
+      - name: check
+        if: ${{ failure() && steps.test1.conclusion == 'success' }}
+      - name: test5
+        id: test5
+        run: echo test5
           
