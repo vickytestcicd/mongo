@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: |
-          echo ${{ inputs.repository }} 
-          echo ${{ inputs.tag }}
-          export a=0;
-          if a==1;then exit 1;
+          export a=0
+          if a==1;then exit 1; fi
       - run: echo "test"
           
