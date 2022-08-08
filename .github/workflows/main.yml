@@ -17,6 +17,6 @@ jobs:
       - run: |
           export a=0
           echo $a
-          if [[ $a == 1 ]]; then exit 1;  fi
+          if [[ $a == 0 ]]; then echo $a ,exit 1; fi
       - run: echo "test"
           
