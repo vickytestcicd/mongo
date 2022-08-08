@@ -15,5 +15,5 @@ jobs:
       - run: |
           echo ${{ inputs.repository }} 
           echo ${{ inputs.tag }}
-          
+          exit 1
           
