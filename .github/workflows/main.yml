@@ -1,25 +1,27 @@
 name: TEST
 
 on:
-  workflow_dispatch: 
-    inputs: 
-      repository:
-        required: true
-      tag:
-        required: true
+  push:
+    branches: [main]
+#   workflow_dispatch: 
+#     inputs: 
+#       repository:
+#         required: true
+#       tag:
+#         required: true
       
 jobs: 
   ci: 
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v2
-        with:
-          repository: ${{ inputs.repository }}
-          ref: ${{ inputs.tag }}
+#       - uses: actions/checkout@v2
+#         with:
+#           repository: ${{ inputs.repository }}
+#           ref: ${{ inputs.tag }}
       - run: |
           export a=0
-          echo $a
-          if [[ $a -eq 0 ]]; then echo -e "\033[31m${a}\033[0m" 
-          exit 0; fi
+          export c=$(echo $a|grep1)
+          
+          if [[ $a -eq null ]]; then echo "test1";else echo "test2";fi
       - run: echo "test"
           
