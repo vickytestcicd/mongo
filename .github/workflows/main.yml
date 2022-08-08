@@ -28,7 +28,7 @@ jobs:
         id: test3
         run: |
            echo test3
-           exit 1
+           exit 0
       - name: test4
         id: test4
         run: echo test4
