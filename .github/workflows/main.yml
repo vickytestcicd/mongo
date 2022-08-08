@@ -34,6 +34,7 @@ jobs:
         run: echo test4
       - name: check
         if: ${{ failure() && steps.test1.conclusion == 'success' }}
+        run: echo ye
       - name: test5
         id: test5
         run: echo test5
