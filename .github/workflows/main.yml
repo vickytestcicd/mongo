@@ -18,6 +18,6 @@ jobs:
           export a=0
           echo $a
           if [[ $a -eq 0 ]]; then echo $a 
-          exit 1; fi
+          exit 0; fi
       - run: echo "test"
           
