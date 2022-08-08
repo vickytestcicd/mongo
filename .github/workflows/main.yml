@@ -21,6 +21,7 @@ jobs:
           ref: ${{ inputs.tag }}
           fetch-depth: 0
       - run: |
-          echo ${{ github.api_url }}
+          echo  ${{ inputs.repository }}
+          echo ${{ inputs.tag }}
 
     
