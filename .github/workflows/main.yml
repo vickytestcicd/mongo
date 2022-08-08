@@ -21,7 +21,8 @@ jobs:
           ref: ${{ inputs.tag }}
           fetch-depth: 0
       - run: |
-         export commitid=$(echo $($(git log -1 --format='%H'):0:7))
-         echo $commitid
+         export commitid=$(git log -1 --format='%H')
+         export label=$(commitid:0:7)
+         echo $label
 
-
+    
