@@ -17,9 +17,7 @@ on:
       test:
         required: true
         type: boolean
-      test2:
-        required: true
-        type: button 
+
 
       
 jobs: 
