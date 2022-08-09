@@ -1,14 +1,19 @@
 name: TEST
 
 on:
-  push:
-    branches: [main]
-#   workflow_dispatch: 
-#     inputs: 
-#       repository:
-#         required: true
-#       tag:
-#         required: true
+#   push:
+#     branches: [main]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
       
 jobs: 
   ci: 
