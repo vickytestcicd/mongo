@@ -15,9 +15,11 @@ on:
         - warning
         - debug 
       test:
+        description: 'test'
         required: true
         type: boolean
       test1:
+        description: 'test1'
         required: true
         type: button
       environment:
