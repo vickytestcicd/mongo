@@ -1,8 +1,6 @@
 name: TEST
 
 on:
-#   push:
-#     branches: [main]
   workflow_dispatch:
     inputs:
 #       logLevel:
@@ -21,11 +19,10 @@ on:
       environment:
         description: 'Environment to run tests against'
         type: environment
-        options:
-        - dev
-        - pot
-        - sit
-
+env:
+  A: dev
+  B: pot
+  C: sit    
       
 jobs: 
   ci: 
