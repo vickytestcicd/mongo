@@ -17,11 +17,7 @@ on:
       test:
         description: 'test'
         required: true
-        type: boolean
-      test1:
-        description: 'test1'
-        required: true
-        type: button
+        type: string
       environment:
         description: 'Environment to run tests against'
         type: environment
@@ -36,28 +32,5 @@ jobs:
       - name: test1
         id: test1
         run: |
-           echo test1
-           exit 0
-      - name: test2
-        id: test2
-        run: |
-           echo test2
-           exit 0
-      - name: test3
-        id: test3
-        run: |
-           echo test3
-           exit 0
-      - name: test4
-        id: test4
-        run: echo test4
-      - name: check
-        if: ${{ failure() && steps.test1.conclusion == 'success' }}
-        run: echo ye
-      - name: test5
-        id: test5
-        run: echo test5
-      - name: check
-        if: ${{ cancelled() && steps.test1.conclusion == 'success' }}
-        run: echo ye1
-          
+          echo ${{ inputs.test##*/ }}
+
