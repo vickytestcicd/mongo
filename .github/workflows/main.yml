@@ -16,13 +16,7 @@ on:
         description: 'test'
         required: true
 #         type: string
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-env:
-  A: dev
-  B: pot
-  C: sit    
+  
       
 jobs: 
   ci: 
