@@ -18,11 +18,13 @@ on:
         description: 'test'
         required: true
 #         type: string
-#       environment:
-#         description: 'Environment to run tests against'
-#         type: environment
-#         required: true 
-
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        options:
+        - dev
+        - pot
+        - sit
 
       
 jobs: 
