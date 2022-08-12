@@ -1,0 +1,21 @@
+# deployment
+application:
+  name: epp-cdvm-hc
+  ports: 8080
+
+
+#hpa
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+ # configmap
+configMap:
+  - name: epp-cdvm-hc-cm
+    path: /home/jboss/config
+    subPath: application.yaml
+    content:
+      application.yml: |-
+        username: test
