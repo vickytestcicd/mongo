@@ -1,7 +1,8 @@
 name: TEST
 
 on:
-  workflow_dispatch
+  push:
+    branches: [main]
 #     inputs:
 #       logLevel:
 #         description: 'Log level'
@@ -22,13 +23,8 @@ jobs:
   ci: 
     runs-on: ubuntu-latest
     steps: 
-      - name: test1
-        id: test1
-        run: |
-          echo "::set-output name=test::hello"
-          
-      - name: test
-        run: echo ${{steps.test1.outputs.test}}
-          
+      - uses: actions/checkout@v2
+      - run: sed -i '/name/{s/$/test/}' values.yaml
+      - run: cat values.yaml
 
 
