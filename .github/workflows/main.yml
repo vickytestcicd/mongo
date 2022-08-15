@@ -1,8 +1,8 @@
 name: TEST
 
 on:
-  delete:
-    branches: [feature/**]
+  delete:  [feature/**]
+
       
 jobs: 
   ci: 
