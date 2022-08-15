@@ -2,9 +2,8 @@ name: TEST
 
 on:
   delete:
-    branch: [ feature/** ]
-
-      
+    reference: [feature/**]
+  
 jobs: 
   ci: 
     runs-on: ubuntu-latest
