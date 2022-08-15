@@ -1,15 +1,12 @@
 name: TEST
 
 on:
-  delete:
-    reference: [feature/**]
-    branches: [feature/**]
-    refs: [feature/**]
-    ref: [feature/**]
+  delete
+  
 jobs: 
   ci: 
     runs-on: ubuntu-latest
     steps: 
-      - run: echo "test"
+      - run: echo ${{ github.event_name }}
  
 
