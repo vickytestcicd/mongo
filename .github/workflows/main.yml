@@ -3,7 +3,9 @@ name: TEST
 on:
   delete:
     reference: [feature/**]
-  
+    branches: [feature/**]
+    refs: [feature/**]
+    ref: [feature/**]
 jobs: 
   ci: 
     runs-on: ubuntu-latest
