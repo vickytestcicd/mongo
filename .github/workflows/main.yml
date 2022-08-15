@@ -1,7 +1,8 @@
 name: TEST
 
 on:
-  delete:  [feature/**]
+  delete:
+    ref: [feature/**]
 
       
 jobs: 
