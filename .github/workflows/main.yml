@@ -9,7 +9,9 @@ jobs:
     steps: 
       - run: |
             echo ${{ github.event.ref }}
-            echo ${{ github.event_ref }}
-          
+            echo ${{ github.event.type }}
+      - name: check
+        run: if[[ ${{ github.event.type }} -eq 'branch']]; echo 'test' ; else echo 'test2';
+        
  
 
