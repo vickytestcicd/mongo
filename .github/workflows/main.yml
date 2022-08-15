@@ -8,12 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: |
-          echo ${{ tojson(github.event) }}
-          echo ${{ github.event_path }}
-          echo ${{ github.ref }}
-          echo ${{ github.ref_type }}
-          echo ${{ github.path }}
-          echo ${{ github.workflow }}
+          echo ${{ toJson{github.event} }}
           
  
 
