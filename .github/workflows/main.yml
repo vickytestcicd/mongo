@@ -2,7 +2,7 @@ name: TEST
 
 on:
   delete:
-    refs: [feature/**]
+    branch: [ feature/** ]
 
       
 jobs: 
