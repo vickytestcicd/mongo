@@ -7,14 +7,26 @@ on:
 jobs: 
   ci: 
     runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.check.outputs.result }}
     steps: 
       - name: check
         id: check
         run: |
           export a=feature/test
-          if [[ $a =~ ^feature/ ]] ;then echo "::set-output name=test::hello"; else echo 'test2' ;fi
-          echo ${{ steps.check.outputs.test }}
-      - run: echo ${{ steps.check.outputs.test }}
+          if [[ $a =~ ^feature/ ]] ;then echo "::set-output name=result::true"; else echo 'test2' ;fi
+      - run: echo ${{ steps.check.outputs.result }}
         
- 
+  cd:
+    runs-on: ubuntu-latest
+    needs: ci
+    if: needs.ci.outputs.result == true
+    steps:
+      - run: echo "test"
+  cd2:
+    runs-on: ubuntu-latest
+    needs: ci
+    if: needs.ci.outputs.result == 'true'
+    steps:
+      - run: echo "test"
 
