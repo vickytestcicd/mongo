@@ -9,9 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: check
-        run: exit 0
-      - name: checka
-        run: echo 'test'
+        id: check
+        run: |
+          export a=feature/test
+          if [[ $a =~ ^feature/ ]] ;then echo "::set-output name=test::hello"; else echo 'test2' ;fi
+          echo ${{ steps.check.outputs.test }}
+      - run: echo ${{ steps.check.outputs.test }}
         
  
 
