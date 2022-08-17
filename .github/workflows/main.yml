@@ -1,16 +1,17 @@
 name: TEST
 
 on:
-  delete
+  push:
+    branches: main
   
 jobs: 
   ci: 
     runs-on: ubuntu-latest
     steps: 
-      - run: |
-            echo ${{ github.event.ref }}
       - name: check
-        run: if[[ ${{ github.event.ref }} =~ ^feature/* ]];echo 'test' ;else echo 'test2'; fi
+        run: exit 0
+      - name: checka
+        run: echo 'test'
         
  
 
