@@ -1,25 +1,8 @@
 name: TEST
 
 on:
-  push:
-    branches: main
-  
-jobs: 
-  ci: 
-    runs-on: ubuntu-latest
-    outputs:
-      result: ${{ steps.check.outputs.result }}
-    steps: 
-      - name: check
-        run: |
-          echo 'test'
+  workflow_dispatch:
+jobs:
+  test:
+    uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
         
-  cd:
-    runs-on: ubuntu-latest
-    needs: ci
-    steps:
-      - run: exit 1
-      - run: echo 'test'
-      - name: haha
-        if: ${{ failure() }}
-        run: echo 'failed'
