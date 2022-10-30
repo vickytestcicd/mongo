@@ -3,11 +3,11 @@ name: TEST
 on:
   workflow_dispatch:
     inputs:
-      dbEnv:
+      environment:
         required: true
         type: string
 jobs:
   test:
     uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
     with:
-      dbEnv: ${{ inputs.dbEnv }}
+      environment: ${{ inputs.environment }}
