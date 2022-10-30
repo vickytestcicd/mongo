@@ -2,7 +2,12 @@ name: TEST
 
 on:
   workflow_dispatch:
+    inputs:
+      test:
+        required: true
+        type: string
 jobs:
   test:
     uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
-        
+    with:
+      test: ${{ inputs.test }}
