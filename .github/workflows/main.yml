@@ -9,5 +9,7 @@ on:
 jobs:
   test:
     uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
+    secrets:
+      SONAR: ${{ secrets.SONAR }}
     with:
       environment: ${{ inputs.environment }}
