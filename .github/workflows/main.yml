@@ -12,4 +12,4 @@ jobs:
     secrets:
       SONAR: ${{ secrets.SONAR }}
     with:
-      environment: ${{ inputs.environment }}
+      environment: ${{ github.event.inputs.environment }}
