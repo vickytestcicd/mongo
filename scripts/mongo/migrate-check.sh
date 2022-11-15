@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for line in .source/mongo/*; do 
+cd source/mongo
+for line in ./source/mongo/*; do 
    echo $line
 	if [[ ! -d $line ]]; then
 		echo "mongo folder 下 不能存在文件" $line
