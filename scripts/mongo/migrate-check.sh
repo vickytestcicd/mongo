@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd source/mongo
+cd ./source/mongo
