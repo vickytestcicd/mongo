@@ -1,22 +1,49 @@
 name: TEST
 
 on:
-  push: 
+  push:
 jobs:
-  test:
-    uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
-  test2:
-    runs-on: ubuntu-latest
-    needs: [ test ]
-    steps:
-      - run: |
-          echo "hahaha ${{ needs.test.outputs.deployResulta }}"
-          echo "hahah ${{ needs.test.outputs.deployResultb }}"
   test1:
     runs-on: ubuntu-latest
-    needs: [ test ]
+    outputs:
+      bb: ${{ steps.ttt.outputs.bb }}
+    steps:
+      - id: ttt
+        run: |
+          echo "::set-output name=bb::failed"
+          exit 1
+  test2:
+    runs-on: ubuntu-latest
+    needs: [ test1 ]
+    outputs:
+      bb: ${{ steps.ttt.outputs.bb }}
+    steps:
+      - id: ttt
+        run: |
+          echo "::set-output name=bb::failed"
+  test3:
+    runs-on: ubuntu-latest
+    needs: [ test1, test2 ]
+    if: ${{ always() }}
     steps:
       - run: |
-          echo "hahah ${{ needs.test.result }}"
+          echo ${{ needs.test1.outputs.bb }}
+          echo ${{ needs.test2.outputs.bb }}
+# jobs:
+#   test:
+#     uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
+#   test2:
+#     runs-on: ubuntu-latest
+#     needs: [ test ]
+#     steps:
+#       - run: |
+#           echo "hahaha ${{ needs.test.outputs.deployResulta }}"
+#           echo "hahah ${{ needs.test.outputs.deployResultb }}"
+#   test1:
+#     runs-on: ubuntu-latest
+#     needs: [ test ]
+#     steps:
+#       - run: |
+#           echo "hahah ${{ needs.test.result }}"
         
 
