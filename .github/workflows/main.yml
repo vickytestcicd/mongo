@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ test ]
     steps:
-      - run: echo "resut ${{ needs.test.result }}"
+      - run: |
+          echo "resut ${{ needs.test.outputs.deployResulta }}"
+          echo "resut ${{ needs.test.outputs.deployResultb }}"
         
 
