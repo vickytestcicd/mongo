@@ -10,13 +10,13 @@ jobs:
     needs: [ test ]
     steps:
       - run: |
-          echo "resut ${{ needs.test.outputs.deployResulta }}"
-          echo "resut ${{ needs.test.outputs.deployResultb }}"
+          echo "hahah ${{ needs.test.outputs.deployResulta }}"
+          echo "hahah ${{ needs.test.outputs.deployResultb }}"
   test1:
     runs-on: ubuntu-latest
     needs: [ test ]
     steps:
       - run: |
-          echo "resut ${{ needs.test.result }}"
+          echo "hahah ${{ needs.test.result }}"
         
 
