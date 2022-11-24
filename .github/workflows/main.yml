@@ -1,15 +1,14 @@
 name: TEST
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        required: true
-        type: string
+  push: 
 jobs:
   test:
     uses: vickytestcicd/testcicd/.github/workflows/main.yml@master
-    secrets:
-      SONAR: ${{ secrets.SONAR }}
-    with:
-      environment: ${{ github.event.inputs.environment }}
+  test2:
+    runs-on: ubuntu-latest
+    needs: [ test ]
+    steps:
+      - run: echo "resut ${{ needs.test.result }}"
+        
+
