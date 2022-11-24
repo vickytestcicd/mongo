@@ -8,18 +8,10 @@ jobs:
   test2:
     runs-on: ubuntu-latest
     needs: [ test ]
-    if: ${{ needs.test.outputs.deployResulta }}
     steps:
       - run: |
           echo "resut ${{ needs.test.outputs.deployResulta }}"
           echo "resut ${{ needs.test.outputs.deployResultb }}"
-  test3:
-    runs-on: ubuntu-latest
-    needs: [ test ]
-    if: ${{ needs.test.outputs.deployResultb }}
-    steps:
-      - run: |
-          echo "resut ${{ needs.test.outputs.deployResulta }}"
-          echo "resut ${{ needs.test.outputs.deployResultb }}"
+
         
 
