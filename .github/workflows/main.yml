@@ -1,7 +1,14 @@
 name: TEST
 
 on:
-  push:
+  workflow_call:
+    inputs:
+      aa:
+        required: true
+        type: string
+      bb:
+        required: true
+        type: string
 jobs:
   test1:
     runs-on: ubuntu-latest
