@@ -5,10 +5,10 @@ on:
     inputs:
       aa:
         required: true
-        type: string
+        type: boolean
       bb:
         required: true
-        type: string
+        type: boolean
 jobs:
   test1:
     runs-on: ubuntu-latest
